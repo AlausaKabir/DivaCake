@@ -17,7 +17,7 @@ module.exports = {
     }
   },
 
-  async getOrder(req, res) {
+  async getAllOrder(req, res) {
     try {
       const fetchAllOrder = await models.Order.find();
       return successResponse(res, 200, "Successfully Fetch all Application", {

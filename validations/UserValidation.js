@@ -1,5 +1,7 @@
 const Joi = require("joi");
+const CryptoJs = require("crypto-js");
 const { JoiEmail, JoiUsername } = require("../services/JoiService");
+const { PASS_SEC } = require("../config/keys");
 
 //Regsitration Validation
 
@@ -31,6 +33,8 @@ const loginValidation = (data) => {
 
   return response;
 };
+
+//Password Encrypting and Hashing
 
 module.exports = {
   registerValidation,

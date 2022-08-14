@@ -7,6 +7,7 @@ const OrderSchema = new mongoose.Schema(
       {
         CakeId: {
           type: String,
+          required: true,
         },
         quantity: {
           type: Number,
@@ -14,6 +15,7 @@ const OrderSchema = new mongoose.Schema(
         },
       },
     ],
+
     amount: {
       type: Number,
       require: true,
