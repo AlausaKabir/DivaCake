@@ -28,6 +28,7 @@ const userRegistration = async (req, res) => {
 const userLogin = async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
+
     if (!user) return errorResponse(res, 401, err.message);
     console.log(user, "User");
     const hashedPassword = CryptoJs.AES.decrypt(user.password, PASS_SEC);
